@@ -1,0 +1,53 @@
+.location-select-container{
+    background-color: #f5f6f7;
+    .map-container{
+        height: 50vh;
+    }
+    .nearby-shop-list{
+        padding: 15px;
+        height: 50vh;
+        box-sizing: border-box;
+        .shop-card{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            .location-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                .shop-name{
+                    font-size: 30px;
+                    font-weight: 600;
+                }
+                .location-detail{
+                    color: #a5a8ac;
+                    font-size: 26px;
+                }
+            }
+            .select-btn{
+                Button{
+                    border-radius: 100px;
+                    background-color: #fa7516;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .no-shop{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        .contant{
+            font-size: 35px;
+            font-weight: 600;
+            color:#a5a8ac;
+        }
+    }
+}

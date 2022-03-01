@@ -1,0 +1,103 @@
+.comfirm-order-container {
+  background-color: #f0f1f5;
+  .take-goods-info {
+    margin: 0 auto 35px auto;
+    width: 97%;
+    background-color: #fff;
+    padding:15px 20px;
+    transform: translateY(15px);
+    box-sizing: border-box;
+    border-radius: 15px;
+    .consignee-info {
+      font-size: 24px;
+      color: #97a1b2;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0 20px 0;
+      border-bottom: 1px solid #ecedee;
+      .consignee {
+        font-weight: 600;
+        color: #000;
+      }
+    }
+    .take-goods-point {
+      font-size: 24px;
+      color: #97a1b2;
+      padding: 20px 0;
+      border-bottom: 1px solid #ecedee;
+      .address {
+        font-weight: 600;
+        color: #000;
+      }
+      .detail-address-container {
+        display: flex;
+        justify-content: space-between;
+        .detail-address {
+          margin-top: 15px;
+        }
+      }
+    }
+    .promot {
+      color: #f08261;
+      margin: 20px 0 0 0;
+      font-size: 24px;
+    }
+  }
+  .order-info-container {
+    padding: 0 30px;
+    background-color: #fff;
+    margin-bottom: 120px;
+    .goods-shop-name {
+      font-size: 26px;
+      height: 70px;
+      line-height: 70px;
+      .goods-shop-name-text {
+        margin-left: 12px;
+      }
+      image {
+        width: 48px;
+        height: 48px;
+        vertical-align: middle;
+      }
+    }
+    .goods-info-common-noline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      font-size: 28px;
+      Text {
+        color: #f35f28;
+      }
+    }
+    .goods-info-common-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      border-bottom: 1px solid #f2f6fc;
+    }
+    .payment-remark {
+      height: 100px;
+      line-height: 100px;
+      border-bottom: 1px solid #f2f6fc;
+      .payment-remark-text {
+        font-size: 28px;
+        margin-right: 86px;
+      }
+      .payment-remark-warning {
+        font-size: 26px;
+        color: #97a1b2;
+      }
+    }
+    .goods-origin-price {
+      font-size: 28px;
+      border: none;
+      .goods-cash {
+        Text {
+          color: #f35f28;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.refund-order-card-container{
+  background-color: #fff;
+  margin-bottom: 20px;
+  .refund-total-price{
+    padding: 15px 15px;
+    font-size: 32px;
+    font-weight: 600;
+    Text{
+      color: red;
+    }
+  }
+  .order-info{
+    color: #a7a7a7;
+    font-size: 24px;
+    padding: 0 15px;
+    .order-price{
+      margin-right: 15px;
+    }
+  }
+  .refund-goods-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+    .goods-info{
+      display: flex;
+      .price-and-time{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 24px;
+        .refund-price{
+          font-size: 28px;
+          font-weight: 600;
+        }
+      }
+      .goods-cover{
+        width: 160px;
+        height: 160px;
+        position: relative;
+        margin-right: 10px;
+        .refund-status{
+          position: absolute;
+          bottom: 0;
+          width: 160px;
+          font-size: 24px;
+          color: #fff;
+          text-align: center;
+        }
+        .success{
+          background-color: rgba(8, 236, 27, 0.5);
+        }
+        .cancel-fail-wait{
+          background-color: rgba(23, 24, 23, 0.5);
+        }
+        Image{
+          width: 160px;
+          height: 160px;
+        }
+      }
+    }
+    .refund-detail-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btn{
+        Button{
+          width: 150px;
+          padding: 0 5px;
+          font-size: 24px;
+          border:1px solid #ccc;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+}

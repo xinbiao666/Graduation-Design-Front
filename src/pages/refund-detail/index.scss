@@ -1,0 +1,101 @@
+.refund-order-detail {
+  background-color: #f5f6f7;
+  height: 100vh;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  .at-steps {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 15px 0;
+  }
+  .at-steps__title {
+    font-size: 24px;
+  }
+  .at-steps__circular {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .at-steps__desc {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 22px;
+  }
+  .status-detail {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    .title {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .contant {
+      font-size: 24px;
+      margin-bottom: 8px;
+      Text {
+        color: red;
+      }
+    }
+    .date-time {
+      font-size: 24px;
+      color: #afafaf;
+    }
+  }
+  .refund-price {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    .price-box {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-size: 28px;
+      }
+      .price {
+        color: red;
+      }
+    }
+    .explain {
+      font-size: 24px;
+      color: #afafaf;
+    }
+  }
+  .refund-order-info {
+    font-size: 24px;
+    background-color: #fff;
+    color: #afafaf;
+    padding: 20px;
+    margin-bottom: 20px;
+    .option {
+      padding: 8px 0;
+      display: flex;
+    }
+    .title {
+      margin-right: 50px;
+    }
+  }
+  .goods-info {
+    display: flex;
+    padding: 20px;
+    justify-content: flex-start;
+    background-color: #fff;
+    font-size: 24px;
+    .goods-cover {
+      width: 160px;
+      height: 160px;
+      image {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    .goods-num-name {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .surplus-num{
+        color: #afafaf;
+    }
+  }
+}

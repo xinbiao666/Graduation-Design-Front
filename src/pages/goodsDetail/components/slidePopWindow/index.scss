@@ -1,0 +1,85 @@
+.at-float-layout__container{
+    border-radius: 48px 48px 0 0;
+    .check-buy-container{
+        position: relative;
+        min-height: 600px;
+        margin-bottom: 120px;
+        padding: 20px;
+        .goods-payment-info{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 200px;
+            .goods-image{
+                margin-right: 20px;
+                Image{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            .goods-price-num{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .price{
+                    color:#ff891e;
+                    font-size: 45px;
+                }
+                .num{
+                    color:#b8b6b6;
+                    font-size: 24px;
+                }
+            }
+        }
+        .goods-buy-num{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            height: 80px;
+            .num-text{
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+        .mode-info{
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 120px;
+            font-size: 24px;
+            font-weight: 600;
+            .mode{
+                width: 120px;
+                height: 60px;
+                font-size: 24px;
+                background-color: #fbf2ef;
+                color: #f19e8c;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 60px;
+                margin-top: 20px;
+                font-weight: 400;
+            }
+        }
+        .comfirm-btn{
+            position:fixed;
+            bottom:0;
+            left:50%;
+            transform: translate(-50%,0);
+            background-color: #fff;
+            height: 120px;
+            width: 100%;
+           Button{
+            width: 686px;
+            height: 88px;
+            margin:0 auto;
+            background: #ff891e;
+            border-radius: 44px;
+            color:#fff;
+           }
+        }
+    }
+}

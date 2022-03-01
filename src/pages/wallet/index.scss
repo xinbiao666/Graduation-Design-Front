@@ -1,0 +1,19 @@
+.wallet-container {
+  height: 100vh;
+  background-color: #f6f6f6;
+  padding: 15px 0;
+
+  .wallet-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 80px;
+    line-height: 80px;
+    font-size: 26px;
+    padding: 0 25px;
+
+    .balance {
+      color: #ccc;
+    }
+  }
+}

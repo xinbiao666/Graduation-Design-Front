@@ -1,0 +1,182 @@
+.order-detail-container {
+  font-size: 26px;
+  box-sizing: border-box;
+  background-color: #f5f6f7;
+  position: relative;
+  margin-bottom: 120px;
+  .user-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 20px;
+    .user-name-phone {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      .icon {
+        margin-right: 20px;
+        image {
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .receive-code {
+      color: #629cf8;
+    }
+  }
+  .receive-location {
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    .icon {
+      margin-right: 20px;
+      image {
+        width: 40px;
+        height: 40px;
+        vertical-align: middle;
+      }
+    }
+    .location-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .location-detail {
+        color: #a6a6a6;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .at-steps{
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 15px 0;
+  }
+  .at-steps__title{
+    font-size: 24px;
+  }
+  .at-steps__circular{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .at-steps__desc{
+    width: 200px;
+    margin: 0 auto;
+    font-size: 22px;
+  }
+
+  .goods-info-container {
+    background-color: #fff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    .good-detail {
+      display: flex;
+      width: 550px;
+      .goods-cover {
+        image {
+          width: 160px;
+          height: 160px;
+          border-radius: 16px;
+        }
+      }
+      .goods-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        .goods-price-num {
+          color: #a6a6a6;
+          font-size: 24px;
+        }
+      }
+    }
+    .goods-price {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      .refund-btn {
+        .status-text{
+          color: #a6a6a6;
+        }
+        button {
+          padding: 0 20px;
+          font-size: 24px;
+          border-radius: 50px;
+          background-color: #fa7516;
+          color: #fff;
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  .goods-total-price {
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .total-real-cost {
+    background-color: #fff;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    .price{
+        color: #fa7516;
+        font-size: 30px;
+        font-weight: 600;
+    }
+  }
+  .order-info {
+    background-color: #fff;
+    padding: 0 20px;
+    margin-top: 20px;
+    .order-info-title {
+      padding: 30px 0;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .order-id {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+    .confirm-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .cancel-order-btn{
+      height: 100px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 -5px 50px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      Button{
+        width: 150px;
+        font-size: 24px;
+        padding: 0 15px;
+        margin-right: 20px;
+        border:1px solid #ccc;
+        border-radius: 50px;
+      }
+  }
+}

@@ -1,0 +1,45 @@
+.payment-success-container {
+    background-color: #f0f1f5;
+    height: 100vh;
+    padding: 65px 0;
+    box-sizing: border-box;
+  .icon-text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    .icon {
+      image {
+        height: 100px;
+        width: 100px;
+      }
+    }
+    .text {
+      font-size: 40px;
+      font-weight: 600;
+    }
+  }
+  .prompt{
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 28px;
+      color: #a8a7a7;
+  }
+  .operat-btn{
+      display: flex;
+      justify-content: space-around;
+      Button{
+          width: 300px;
+          border-radius: 100px;
+      }
+      .continue{
+          background-color: #fff;
+          color: #fa7516;
+          border: 1px solid #fa7516;
+      }
+      .check-order{
+        background-color: #fa7516;
+      }
+  }
+}

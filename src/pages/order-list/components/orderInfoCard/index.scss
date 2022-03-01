@@ -1,0 +1,65 @@
+.order-info-card-container {
+  font-size: 24px;
+  background-color: #fff;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  .order-date-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 28px;
+    .date {
+      color: #b4b3b3;
+    }
+    .status {
+      color: #fa8452;
+    }
+  }
+  .order-info {
+    display: flex;
+    justify-content: space-between;
+    .order-image-name {
+      display: flex;
+      width: 500px;
+      image {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    .order-price-num {
+      .num {
+        text-align: right;
+        color: #b4b3b3;
+      }
+    }
+  }
+  .total-real-payment {
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
+    Text {
+      font-size: 28px;
+      color: #fa8452;
+    }
+  }
+  .refund-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+    button {
+      width: 160px;
+      border: 1px solid #f7f7f7;
+      font-size: 24px;
+      border-radius: 80px;
+    }
+    .confirm-receive {
+      button {
+        background-color: #fa7516;
+        color: #fff;
+        margin-right: 20px;
+        border: 0;
+      }
+    }
+  }
+}

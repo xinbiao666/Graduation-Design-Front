@@ -1,0 +1,39 @@
+.total-price-payment{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+    height: 120px;
+    width: 100%;
+    margin:0 auto;
+    padding:0 32px;
+    background: #ffffff;
+    box-shadow: 0 -5px 50px rgba(0,0,0,0.2);
+    .total-price-integral-container{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+    .total-price-integral{
+        color:#F35F28;
+        Text{
+            font-size: 42px;
+        }
+    }
+    .order-payment{
+        width: 256px;
+        margin: 0;
+        opacity: 1;
+        font-size: 36px;
+        color:#ffffff;
+        background: #ff891e;
+        border-radius: 60px;
+    }
+    .only-button{
+        width: 100%;
+    }
+}

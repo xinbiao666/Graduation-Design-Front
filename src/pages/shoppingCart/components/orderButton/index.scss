@@ -1,0 +1,63 @@
+.total-price-payment {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  height: 120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  background: #ffffff;
+  z-index: 999;
+  box-shadow: 0 -5px 50px rgba(0, 0, 0, 0.2);
+
+  .check-all {
+    margin-right: 20px;
+    checkbox .wx-checkbox-input {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      background-color: #dee1e4;
+      border: 0;
+    }
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+      // border: 1px solid #FF783B;
+      background: #ff783b;
+    }
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+      border-radius: 50%; /* 圆角 */
+      width: 30px; /* 选中后对勾大小，不要超过背景的尺寸 */
+      height: 30px; /* 选中后对勾大小，不要超过背景的尺寸 */
+      line-height: 35px;
+      text-align: center;
+      font-size: 24px; /* 对勾大小 30rpx */
+      color: #fff; /* 对勾颜色 白色 */
+      background: transparent;
+      transform: translate(-50%, -50%) scale(1);
+      -webkit-transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  .total-payment{
+      display: flex;
+      align-items: center;
+      .total{
+          Text{
+              color:#ff783b
+          }
+      }
+  }
+  .order-payment {
+    width: 180px;
+    margin: 0;
+    opacity: 1;
+    font-size: 30px;
+    color: #ffffff;
+    background: #ff891e;
+    border-radius: 60px;
+    margin-left: 20px;
+  }
+}

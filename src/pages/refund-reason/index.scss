@@ -1,0 +1,144 @@
+.refund-reason-container {
+  background-color: #f6f6f6;
+  padding: 20px;
+  height: 106vh;
+  box-sizing: border-box;
+  position: relative;
+
+  .refund-goods {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .goods-info-container {
+      display: flex;
+      justify-content: space-between;
+      font-size: 26px;
+      align-items: center;
+      margin-top: 15px;
+
+      .goods-info {
+        display: flex;
+        width: 450px;
+
+        .goods-cover {
+          width: 160px;
+          height: 160px;
+
+          image {
+            width: 160px;
+            height: 160px;
+          }
+        }
+
+        .goods-name {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+
+  .refund-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .price {
+      color: red;
+    }
+  }
+
+  .reason-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .refund-reason-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      Text {
+        color: red;
+        font-size: 24px;
+      }
+    }
+
+    .at-radio__option {
+      padding: 0;
+    }
+
+    .at-radio__title {
+      font-size: 24px;
+    }
+
+    .at-radio__option-wrap {
+      padding: 15px 0;
+    }
+
+    .at-radio__option-wrap::after {
+      display: none;
+    }
+
+    .at-radio::before {
+      display: none;
+    }
+
+    .at-radio::after {
+      display: none;
+    }
+  }
+
+  .refund-explain {
+    background-color: #fff;
+    padding: 20px;
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+
+  .confirm-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -5px 50px rgba(0, 0, 0, 0.2);
+
+    .btn {
+      width: 85%;
+
+      Button {
+        background-color: #e36230;
+        height: 80px;
+        border-radius: 50px;
+        font-size: 28px;
+        line-height: 80px;
+        color: #fff;
+      }
+    }
+  }
+}

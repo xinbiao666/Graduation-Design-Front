@@ -1,0 +1,58 @@
+page{
+    height: 100%;
+}
+.mine-page-container{
+    background-color: #f6f8fb;
+    padding:15px 20px;
+    height: 100%;
+    box-sizing: border-box;
+    .user-info{
+        display: flex;
+        align-items: center;
+        padding-left: 25px;
+        margin-top: 35px;
+        .user-name{
+            margin-left: 50px;
+        }
+    }
+    .order-state{
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 24px;
+        margin: 50px 0 50px 0;
+        padding: 15px 0;
+        border-radius: 20px;
+        Image{
+            width: 70px;
+            height: 70px;
+        }
+        .state-text{
+            color:#e06130;
+        }
+        .state-common{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .user-operate{
+        background-color: #fff;
+        border-radius: 20px;
+        padding-top: 20px;
+        .at-grid{
+            .at-grid__flex{
+                padding-bottom: 20px;
+            }
+            .content-inner__img{
+                width: 70px;
+                height: 70px;
+            }
+            .content-inner__text{
+                font-size: 24px;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,29 @@
+$color-brand: #ec893c;
+button::after {
+  border: none;
+}
+checkbox .wx-checkbox-input{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #dee1e4;
+  border:0;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  // border: 1px solid #FF783B;
+  background: #FF783B;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 30px;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 30px;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 35px;
+  text-align: center;
+  font-size:24px; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+@import "~taro-ui/dist/style/index.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
