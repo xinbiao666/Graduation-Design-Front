@@ -41,7 +41,8 @@ export default class PaymentSuccess extends Component<any, any> {
   }
 
   gotoOrderDetail = () => {
-
+    const orderInfo = JSON.parse(this.$instance.router.params.orderInfo)
+    taro.reLaunch({ url: `/pages/order-detail/index?order_id=${orderInfo.order_id}` })
   }
 
   render(): ReactNode {

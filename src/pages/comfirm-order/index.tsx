@@ -12,12 +12,62 @@ export default class ComfirmOrder extends Component<any, any> {
     this.state = {
       goodsInfoList: [],
       orderInfo: {},
-      isShoppingCart: false
+      isShoppingCart: false,
+      consignee:{
+        name: '',
+        phoneNumber: ''
+      },
+      selfTakeLocationInfo:{
+        shopName: '',
+        locationDetail: ''
+      }
     };
   }
 
   componentDidMount(): void {
     this.getOrderInfo();
+    this.getSelfLocationInfo();
+    this.getConsigneeInfo();
+  }
+
+  getConsigneeInfo = async () => {
+    const { user_id } = getUserIdFromStorage()
+    const { data } = await taro.request({
+      url: 'http://localhost:3000/order/queryCurrentPicker',
+      data: {
+        user_id
+      },
+      method: 'GET',
+      header: {
+        'contant-type': 'application/json'
+      }
+    })
+    this.setState({
+      consignee: {
+        name: data.pickerInfo.consignee_name,
+        phoneNumber:  data.pickerInfo.consignee_phone
+      }
+    })
+  }
+
+  getSelfLocationInfo = async () => {
+    const { user_id } = getUserIdFromStorage()
+    const { data } = await taro.request({
+      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
+      data:{
+        user_id
+      },
+      method: 'GET',
+      header: {
+        "content-type": "application/json"
+      }
+    })
+    this.setState({
+      selfTakeLocationInfo: {
+        shopName: data.currentLocationInfo.shop_name,
+        locationDetail:  data.currentLocationInfo.location_detail
+      }
+    })
   }
 
   getOrderInfo = () => {
@@ -99,21 +149,21 @@ export default class ComfirmOrder extends Component<any, any> {
   $instance = getCurrentInstance();
 
   render() {
-    const { goodsInfoList, orderInfo } = this.state;
+    const { goodsInfoList, orderInfo, consignee, selfTakeLocationInfo } = this.state;
     return (
       <View className='comfirm-order-container'>
         <View className='take-goods-info'>
           <View className='consignee-info'>
-            <View className='consignee'>提货人：江星标 13502528065</View>
+          <View className='consignee'>提货人：{consignee.name || ''} {consignee.phoneNumber || ''}</View>
             <View>
-              更换<View className='at-icon at-icon-chevron-right'></View>
+              编辑<View className='at-icon at-icon-chevron-right'></View>
             </View>
           </View>
           <View className='take-goods-point'>
-            <View className='address'>自提点：下栅拱星路美宜佳</View>
+          <View className='address'>自提点：{selfTakeLocationInfo.shopName || ''}</View>
             <View className='detail-address-container'>
               <View className='detail-address'>
-                珠海市香洲区金鼎下栅拱星路58号美宜佳
+                {selfTakeLocationInfo.locationDetail || ''}
               </View>
               <View>
                 切换<View className='at-icon at-icon-chevron-right'></View>

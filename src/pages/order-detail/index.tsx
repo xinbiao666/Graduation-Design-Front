@@ -1,10 +1,9 @@
 import { Component } from "react";
 import { View, Image, Button } from "@tarojs/components";
-import taro, { getCurrentInstance, uploadFile } from "@tarojs/taro";
+import taro, { getCurrentInstance } from "@tarojs/taro";
 import parseDate from "@/pages/common/parseDate";
 import { AtSteps } from "taro-ui";
 import "./index.scss";
-import getUserIdFromStorage from "../common/getUserIdFromStorage";
 
 export default class OrderDetail extends Component<any, any> {
   constructor(props: any) {
@@ -137,23 +136,23 @@ export default class OrderDetail extends Component<any, any> {
   render() {
     const { orderDetailInfo, orderGoodsList, transportInfo } = this.state;
     return (
-      <View className="order-detail-container">
-        <View className="user-info-container">
-          <View className="user-name-phone">
-            <View className="icon">
-              <Image src="http://47.106.202.197:3000/image/icon/my-info.svg"></Image>
+      <View className='order-detail-container'>
+        <View className='user-info-container'>
+          <View className='user-name-phone'>
+            <View className='icon'>
+              <Image src='http://47.106.202.197:3000/image/icon/my-info.svg'></Image>
             </View>
-            <View className="user">江星标 13697749577</View>
+            <View className='user'>江星标 13697749577</View>
           </View>
-          <View className="receive-code">自提码</View>
+          <View className='receive-code'>自提码</View>
         </View>
-        <View className="receive-location">
-          <View className="icon">
-            <Image src="http://47.106.202.197:3000/image/icon/shop.png"></Image>
+        <View className='receive-location'>
+          <View className='icon'>
+            <Image src='http://47.106.202.197:3000/image/icon/shop.png'></Image>
           </View>
-          <View className="location-info">
-            <View className="location-name">自提点：江星标的家</View>
-            <View className="location-detail">
+          <View className='location-info'>
+            <View className='location-name'>自提点：江星标的家</View>
+            <View className='location-detail'>
               梅州市梅江区坝南路23号a栋302房
             </View>
           </View>
@@ -169,27 +168,27 @@ export default class OrderDetail extends Component<any, any> {
         )}
         {orderGoodsList.map(item => {
           return (
-            <View className="goods-info-container" key={item.goods_id}>
-              <View className="good-detail">
-                <View className="goods-cover">
+            <View className='goods-info-container' key={item.goods_id}>
+              <View className='good-detail'>
+                <View className='goods-cover'>
                   <Image src={item.goods_cover} />
                 </View>
-                <View className="goods-info">
-                  <View className="goods-name">{item.goods_name}</View>
-                  <View className="goods-price-num">
+                <View className='goods-info'>
+                  <View className='goods-name'>{item.goods_name}</View>
+                  <View className='goods-price-num'>
                     ￥{item.goods_price}/件 共{item.goods_num}件
                   </View>
                 </View>
               </View>
-              <View className="goods-price">
-                <View className="price">
+              <View className='goods-price'>
+                <View className='price'>
                   ￥{parseFloat((item.goods_price * item.goods_num).toFixed(2))}
                 </View>
                 {orderDetailInfo.order_status &&
                 orderDetailInfo.order_status !== 3 ? (
-                  <View className="refund-btn">
+                  <View className='refund-btn'>
                     {item.is_refund ? (
-                      <View className="status-text">
+                      <View className='status-text'>
                         {this.statusText(item)}
                       </View>
                     ) : (
@@ -209,30 +208,30 @@ export default class OrderDetail extends Component<any, any> {
             </View>
           );
         })}
-        <View className="goods-total-price">
-          <View className="title">商品总额</View>
-          <View className="total-price">
+        <View className='goods-total-price'>
+          <View className='title'>商品总额</View>
+          <View className='total-price'>
             ￥{orderDetailInfo.goods_total_price}
           </View>
         </View>
-        <View className="total-real-cost">
-          <View className="title">合计实付</View>
-          <View className="price">￥{orderDetailInfo.total_real_cost}</View>
+        <View className='total-real-cost'>
+          <View className='title'>合计实付</View>
+          <View className='price'>￥{orderDetailInfo.total_real_cost}</View>
         </View>
-        <View className="order-info">
-          <View className="order-info-title">订单信息</View>
-          <View className="order-id">
-            <View className="title">订单编号</View>
-            <View className="contant">{orderDetailInfo.order_id}</View>
+        <View className='order-info'>
+          <View className='order-info-title'>订单信息</View>
+          <View className='order-id'>
+            <View className='title'>订单编号</View>
+            <View className='contant'>{orderDetailInfo.order_id}</View>
           </View>
-          <View className="confirm-time">
-            <View className="title">下单时间</View>
-            <View className="contant">
+          <View className='confirm-time'>
+            <View className='title'>下单时间</View>
+            <View className='contant'>
               {parseDate(new Date(orderDetailInfo.order_confirm_time))}
             </View>
           </View>
         </View>
-        <View className="cancel-order-btn">
+        <View className='cancel-order-btn'>
           <View>
             <Button onClick={this.cancelOrder}>取消订单</Button>
           </View>

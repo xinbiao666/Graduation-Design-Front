@@ -17,7 +17,8 @@ export default class Home extends Component<any, any> {
       goodsList: [],
       isLoading: false,
       goodsNum: 0,
-      shopName: ''
+      shopName: '',
+      searchParam: ''
     };
   }
 
@@ -31,7 +32,8 @@ export default class Home extends Component<any, any> {
   handelTabsClick = i => {
     this.setState(
       {
-        currentTab: i
+        currentTab: i,
+        searchParam: ''
       },
       () => {
         this.getGoodsList();
@@ -135,8 +137,31 @@ export default class Home extends Component<any, any> {
     })
   }
 
+  fuzzyQueryGoods = async () => {
+    const { data } = await taro.request({
+      url: 'http://47.106.202.197:3000/goods/queryGoodsList',
+      data: {
+        typeId: this.state.currentTab,
+        goodsName: this.state.searchParam
+      },
+      method: 'GET',
+      header:{
+        'content-typ': 'application/json'
+      }
+    })
+    this.setState({
+      goodsList: data.goodsList
+    })
+  }
+
+  changeSearchParam = (e) => {
+    this.setState({
+      searchParam: e.detail.value
+    })
+  }
+
   render() {
-    const { currentTab, tabList, goodsList, isLoading, goodsNum, shopName } = this.state;
+    const { currentTab, tabList, goodsList, isLoading, goodsNum, shopName, searchParam } = this.state;
     return (
       <View
         className={
@@ -159,7 +184,8 @@ export default class Home extends Component<any, any> {
         </View>
         <View className='search-product'>
           <View className='at-icon at-icon-search icon-position'></View>
-          <Input className='search' />
+          <Input className='search' placeholder='请输入商品名称' value={searchParam} onInput={this.changeSearchParam} maxlength={15} />
+          <View className='search-click' onClick={this.fuzzyQueryGoods}>搜索</View>
         </View>
         <View className='tabs-container'>
           <AtTabs
