@@ -38,7 +38,7 @@ export default class GoodsTakeLocation extends Component<any, any> {
   getNearbyShop = async () => {
     await taro.showLoading({ title: "加载中" });
     const { data } = await taro.request({
-      url: "http://localhost:3000/location/queryNearbyShop",
+      url: "http://82.157.235.2:3000/location/queryNearbyShop",
       data: {
         latitude: this.state.mapLatitude,
         longitude: this.state.mapLongitude
@@ -94,7 +94,7 @@ export default class GoodsTakeLocation extends Component<any, any> {
     const { user_id } = getUserIdFromStorage()
     try{
       await taro.request({
-        url: "http://localhost:3000/location/changeCurrentLocation",
+        url: "http://82.157.235.2:3000/location/changeCurrentLocation",
         data: {
           user_id,
           current_location_id: item.id
@@ -108,6 +108,9 @@ export default class GoodsTakeLocation extends Component<any, any> {
         title: '选择成功',
         icon: 'none',
         duration: 2000
+      })
+      taro.navigateBack({
+        delta: 1
       })
     }catch(e) {
       taro.showToast({

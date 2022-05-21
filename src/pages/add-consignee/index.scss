@@ -1,0 +1,30 @@
+.add-consignee-container{
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-size: 28px;
+    padding: 15px 0;
+    box-sizing: border-box;
+    .at-input{
+        margin-left: 0;
+        padding:24px 15px;
+    }
+    .add-consignee {
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+        height: 120px;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .add-consignee-btn {
+          width: 85%;
+          Button {
+            background-color: #fa7516;
+            font-size: 26px;
+            border-radius: 50px;
+          }
+        }
+      }
+}

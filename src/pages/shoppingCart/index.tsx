@@ -25,7 +25,7 @@ export default class Home extends Component<any, any> {
     try {
       const { user_id } = taro.getStorageSync("userInfo");
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/query",
+        url: "http://82.157.235.2:3000/shoppingCart/query",
         method: "GET",
         data: {
           user_id
@@ -48,7 +48,7 @@ export default class Home extends Component<any, any> {
     try {
       const { user_id } = taro.getStorageSync("userInfo");
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/isSelectAll",
+        url: "http://82.157.235.2:3000/shoppingCart/isSelectAll",
         method: "GET",
         data: {
           user_id
@@ -104,7 +104,7 @@ export default class Home extends Component<any, any> {
   getCurrentLocation = async () => {
     const { user_id } = getUserIdFromStorage()
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
+      url: 'http://82.157.235.2:3000/location/getCurrentLocation',
       data:{
         user_id
       },
@@ -153,7 +153,7 @@ export default class Home extends Component<any, any> {
           </View>
         ) : (
           <View className='cart-empty'>
-            <Image src='http://47.106.202.197:3000/image/icon/shopping-cart-empty.svg'></Image>
+            <Image src='http://82.157.235.2:3000/image/icon/shopping-cart-empty.svg'></Image>
             <View>购物车空空的，快去逛逛吧~</View>
           </View>
         )}

@@ -50,7 +50,7 @@ export default class PaymentSuccess extends Component<any, any> {
       <View className='payment-success-container'>
         <View className='icon-text-container'>
           <View className='icon'>
-            <Image src='http://47.106.202.197:3000/image/icon/payment-success.svg'></Image>
+            <Image src='http://82.157.235.2:3000/image/icon/payment-success.svg'></Image>
           </View>
           <View className='text'>支付成功</View>
         </View>

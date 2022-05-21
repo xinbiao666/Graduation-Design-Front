@@ -58,7 +58,7 @@ export default class OrderList extends Component<any, any> {
     }
     await taro.showLoading({ title: "加载中" });
     const { data } = await taro.request({
-      url: "http://47.106.202.197:3000/order/query",
+      url: "http://82.157.235.2:3000/order/query",
       data: {
         user_id: userInfo.user_id,
         order_status
@@ -104,7 +104,7 @@ export default class OrderList extends Component<any, any> {
               return (
                 <AtTabsPane current={currentTab} index={item.id} key={item.id}>
                   <View className='goods-list-container'>
-                    {orderList.map(orderListItem => {
+                    {orderList?.map(orderListItem => {
                       if (currentTab !== 3) {
                         return (
                           <OrderInfoCard

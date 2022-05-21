@@ -1,10 +1,38 @@
 .consignee-list-container{
+    height: 100vh;
+    padding: 15px 0;
+    background-color: #f4f4f4;
+    font-size: 28px;
+    box-sizing: border-box;
     .consignee-info-card{
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      height: 60px;
+      line-height: 60px;
+      background-color: #fff;
+      margin-bottom: 15px;
+      .current-check-box{
+        margin-right: 15px;
+      }
+      .info-box{
         display: flex;
-        
+        justify-content: space-between;
+        .consignee-name-phone{
+          display: flex;
+          width: 550px;
+          .name{
+            margin-right: 20px;
+          }
+        }
+        .edit{
+          color: #aaa9a9;
+          width: 80px;
+          text-align: right;
+          border-left: 4px solid #faf7f7;
+        }
+      }
     }
-
-
     .add-consignee {
         position: fixed;
         bottom: 0;
@@ -15,10 +43,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-      
         .add-consignee-btn {
           width: 85%;
-      
           Button {
             background-color: #fa7516;
             font-size: 26px;

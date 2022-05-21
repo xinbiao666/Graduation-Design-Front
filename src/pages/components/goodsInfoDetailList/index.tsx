@@ -13,7 +13,7 @@ function GoodsInfoDetailList(props) {
       key: "userInfo"
     });
     await taro.request({
-      url: "http://47.106.202.197:3000/shoppingCart/changeSelectStatus",
+      url: "http://82.157.235.2:3000/shoppingCart/changeSelectStatus",
       method: "POST",
       data: {
         status: item.status,
@@ -34,7 +34,7 @@ function GoodsInfoDetailList(props) {
     });
     if(newVal === 0){
       await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/deleteGoods",
+        url: "http://82.157.235.2:3000/shoppingCart/deleteGoods",
         method: "POST",
         data: {
           user_id: data.user_id,
@@ -46,7 +46,7 @@ function GoodsInfoDetailList(props) {
       });
     }else {
       await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/changeGoodsNum",
+        url: "http://82.157.235.2:3000/shoppingCart/changeGoodsNum",
         method: "POST",
         data: {
           user_id: data.user_id,

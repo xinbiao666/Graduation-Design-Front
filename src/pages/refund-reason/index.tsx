@@ -57,7 +57,7 @@ export default class RefundReason extends Component<any, any> {
     }
     const { user_id } = getUserIdFromStorage();
     const { data } = await taro.request({
-      url: "http://47.106.202.197:3000/refund/cancelOrder",
+      url: "http://82.157.235.2:3000/refund/cancelOrder",
       data: {
         order_id: orderDetailInfo.order_id,
         user_id,

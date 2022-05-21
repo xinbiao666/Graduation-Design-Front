@@ -10,7 +10,7 @@ export default function OrderButton(props) {
     try {
       const { user_id } = taro.getStorageSync("userInfo");
       await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/changeSelectStatus",
+        url: "http://82.157.235.2:3000/shoppingCart/changeSelectStatus",
         method: "POST",
         data: {
           user_id,
@@ -24,16 +24,31 @@ export default function OrderButton(props) {
       props.getShoppingCartList();
       props.isSelectAllFn();
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   };
 
-  const confirmOrder = () => {
-    const goodsInfoList = JSON.stringify(shoppingCartList)
+  const confirmOrder = async () => {
+    const { user_id } = taro.getStorageSync("userInfo");
+    const { data } = await taro.request({
+      url: "http://82.157.235.2:3000/shoppingCart/query",
+      method: "GET",
+      data: {
+        user_id
+      },
+      header: {
+        "content-type": "application/json"
+      }
+    });
+    const selectionList = data.shoppingCartList.filter(i => i.status === 1)
+    if(!selectionList.length){
+      return;
+    }
+    const goodsInfoList = JSON.stringify(shoppingCartList);
     taro.navigateTo({
-      url:`/pages/comfirm-order/index?goodsInfoList=${goodsInfoList}&shoppingCart=true`
-    })
-  }
+      url: `/pages/comfirm-order/index?goodsInfoList=${goodsInfoList}&shoppingCart=true`
+    });
+  };
 
   return (
     <View className='total-price-payment'>

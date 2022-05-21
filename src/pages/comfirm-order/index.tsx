@@ -13,69 +13,69 @@ export default class ComfirmOrder extends Component<any, any> {
       goodsInfoList: [],
       orderInfo: {},
       isShoppingCart: false,
-      consignee:{
-        name: '',
-        phoneNumber: ''
+      consignee: {
+        name: "",
+        phoneNumber: ""
       },
-      selfTakeLocationInfo:{
-        shopName: '',
-        locationDetail: ''
+      selfTakeLocationInfo: {
+        shopName: "",
+        locationDetail: ""
       }
     };
   }
 
-  componentDidMount(): void {
+  componentDidShow(): void {
     this.getOrderInfo();
     this.getSelfLocationInfo();
     this.getConsigneeInfo();
   }
 
   getConsigneeInfo = async () => {
-    const { user_id } = getUserIdFromStorage()
+    const { user_id } = getUserIdFromStorage();
     const { data } = await taro.request({
-      url: 'http://localhost:3000/order/queryCurrentPicker',
+      url: "http://82.157.235.2:3000/order/queryCurrentPicker",
       data: {
         user_id
       },
-      method: 'GET',
+      method: "GET",
       header: {
-        'contant-type': 'application/json'
+        "contant-type": "application/json"
       }
-    })
+    });
     this.setState({
       consignee: {
         name: data.pickerInfo.consignee_name,
-        phoneNumber:  data.pickerInfo.consignee_phone
+        phoneNumber: data.pickerInfo.consignee_phone
       }
-    })
-  }
+    });
+  };
 
   getSelfLocationInfo = async () => {
-    const { user_id } = getUserIdFromStorage()
+    const { user_id } = getUserIdFromStorage();
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
-      data:{
+      url: "http://82.157.235.2:3000/location/getCurrentLocation",
+      data: {
         user_id
       },
-      method: 'GET',
+      method: "GET",
       header: {
         "content-type": "application/json"
       }
-    })
+    });
     this.setState({
       selfTakeLocationInfo: {
         shopName: data.currentLocationInfo.shop_name,
-        locationDetail:  data.currentLocationInfo.location_detail
+        locationDetail: data.currentLocationInfo.location_detail
       }
-    })
-  }
+    });
+  };
 
   getOrderInfo = () => {
     const goodsInfoList = JSON.parse(
       this.$instance.router.params.goodsInfoList
     );
     const isShoppingCart = JSON.parse(
-      this.$instance.router.params.shoppingCart || 'false'
+      this.$instance.router.params.shoppingCart || "false"
     );
     const orderInfo = {
       originPrice: 0,
@@ -84,7 +84,9 @@ export default class ComfirmOrder extends Component<any, any> {
       totalCount: 0
     };
     if (goodsInfoList[0].goods_producing_area) {
-      orderInfo.originPrice = parseFloat((goodsInfoList[0].goods_price * goodsInfoList[0].num).toFixed(2));
+      orderInfo.originPrice = parseFloat(
+        (goodsInfoList[0].goods_price * goodsInfoList[0].num).toFixed(2)
+      );
       orderInfo.freight = 0;
       orderInfo.discount = 0;
       orderInfo.totalCount = orderInfo.originPrice - orderInfo.discount;
@@ -109,7 +111,7 @@ export default class ComfirmOrder extends Component<any, any> {
     const { user_id } = getUserIdFromStorage();
     if (this.state.isShoppingCart) {
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/order/generateOrder",
+        url: "http://82.157.235.2:3000/order/generateOrder",
         method: "POST",
         data: {
           user_id
@@ -118,12 +120,12 @@ export default class ComfirmOrder extends Component<any, any> {
           "content-type": "application/json"
         }
       });
-      return data
+      return data;
     } else {
-      const goods_num = this.state.goodsInfoList[0].num
-      const goods_id = this.state.goodsInfoList[0].goods_id
+      const goods_num = this.state.goodsInfoList[0].num;
+      const goods_id = this.state.goodsInfoList[0].goods_id;
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/order/generateOrder",
+        url: "http://82.157.235.2:3000/order/generateOrder",
         method: "POST",
         data: {
           user_id,
@@ -134,7 +136,7 @@ export default class ComfirmOrder extends Component<any, any> {
           "content-type": "application/json"
         }
       });
-      return data
+      return data;
     }
   };
 
@@ -149,23 +151,38 @@ export default class ComfirmOrder extends Component<any, any> {
   $instance = getCurrentInstance();
 
   render() {
-    const { goodsInfoList, orderInfo, consignee, selfTakeLocationInfo } = this.state;
+    const {
+      goodsInfoList,
+      orderInfo,
+      consignee,
+      selfTakeLocationInfo
+    } = this.state;
     return (
       <View className='comfirm-order-container'>
         <View className='take-goods-info'>
           <View className='consignee-info'>
-          <View className='consignee'>提货人：{consignee.name || ''} {consignee.phoneNumber || ''}</View>
+            <View className='consignee'>
+              提货人：{consignee.name || ""} {consignee.phoneNumber || ""}
+            </View>
             <View>
               编辑<View className='at-icon at-icon-chevron-right'></View>
             </View>
           </View>
           <View className='take-goods-point'>
-          <View className='address'>自提点：{selfTakeLocationInfo.shopName || ''}</View>
+            <View className='address'>
+              自提点：{selfTakeLocationInfo.shopName || ""}
+            </View>
             <View className='detail-address-container'>
               <View className='detail-address'>
-                {selfTakeLocationInfo.locationDetail || ''}
+                {selfTakeLocationInfo.locationDetail || ""}
               </View>
-              <View>
+              <View
+                onClick={() => {
+                  taro.navigateTo({
+                    url: `/pages/current-location/index`
+                  });
+                }}
+              >
                 切换<View className='at-icon at-icon-chevron-right'></View>
               </View>
             </View>
@@ -177,7 +194,7 @@ export default class ComfirmOrder extends Component<any, any> {
         </View>
         <View className='order-info-container'>
           <View className='goods-shop-name'>
-            <Image src='http://47.106.202.197:3000/image/icon/order.png'></Image>
+            <Image src='http://82.157.235.2:3000/image/icon/order.png'></Image>
             <Text className='goods-shop-name-text'>订单商品</Text>
           </View>
           <GoodsInfoDetailList shoppingCartList={goodsInfoList} />

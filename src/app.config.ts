@@ -13,7 +13,9 @@ export default {
     'pages/refund-detail/index',
     'pages/refund-reason/index',
     'pages/setting/index',
-    'pages/wallet/index'
+    'pages/wallet/index',
+    'pages/change-consignee/index',
+    'pages/add-consignee/index'
   ],
   window: {
     backgroundTextStyle: 'light',

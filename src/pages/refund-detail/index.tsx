@@ -38,7 +38,7 @@ export default function RefundDetail() {
 
   const getRefundOrderDetail = async () => {
     const { data } = await taro.request({
-      url: "http://47.106.202.197:3000/order/queryRefundDetail",
+      url: "http://82.157.235.2:3000/order/queryRefundDetail",
       data: {
         goodsId,
         refundId

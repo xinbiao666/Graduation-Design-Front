@@ -17,7 +17,7 @@ export default class Home extends Component<any, any> {
   addToshoppingCart = async (item) => {
     const { data } = await taro.getStorage({key:'userInfo'})
     await taro.request({
-      url: 'http://47.106.202.197:3000/shoppingCart/add',
+      url: 'http://82.157.235.2:3000/shoppingCart/add',
       method: 'GET',
       data: {
         goods_id: item.goods_id,

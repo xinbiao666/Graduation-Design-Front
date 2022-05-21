@@ -48,7 +48,7 @@ export default class Home extends Component<any, any> {
     });
     try {
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/goods/queryGoodsList",
+        url: "http://82.157.235.2:3000/goods/queryGoodsList",
         method: "GET",
         data: {
           typeId: this.state.currentTab
@@ -81,7 +81,7 @@ export default class Home extends Component<any, any> {
     try {
       const { user_id } = taro.getStorageSync("userInfo");
       const { data } = await taro.request({
-        url: "http://47.106.202.197:3000/shoppingCart/query",
+        url: "http://82.157.235.2:3000/shoppingCart/query",
         method: "GET",
         data: {
           user_id
@@ -103,7 +103,7 @@ export default class Home extends Component<any, any> {
 
   getTabList = async () => {
     const { data } = await taro.request({
-      url: "http://47.106.202.197:3000/goods/queryTabList",
+      url: "http://82.157.235.2:3000/goods/queryTabList",
       method: "GET",
       header: {
         "content-type": "application/json"
@@ -123,7 +123,7 @@ export default class Home extends Component<any, any> {
   getCurrentLocation = async () => {
     const { user_id } = getUserIdFromStorage()
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
+      url: 'http://82.157.235.2:3000/location/getCurrentLocation',
       data:{
         user_id
       },
@@ -139,7 +139,7 @@ export default class Home extends Component<any, any> {
 
   fuzzyQueryGoods = async () => {
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/goods/queryGoodsList',
+      url: 'http://82.157.235.2:3000/goods/queryGoodsList',
       data: {
         typeId: this.state.currentTab,
         goodsName: this.state.searchParam

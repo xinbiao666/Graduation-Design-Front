@@ -16,7 +16,7 @@ export default class Wallet extends Component<any, any> {
   componentDidMount(){
     const { user_id } = getUserIdFromStorage()
     taro.request({
-        url:`http://47.106.202.197:3000/wallet?user_id=${user_id}`,
+        url:`http://82.157.235.2:3000/wallet?user_id=${user_id}`,
         data:{
             user_id
         },

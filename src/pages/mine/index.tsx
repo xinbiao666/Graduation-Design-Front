@@ -11,7 +11,7 @@ export default class Home extends Component<any, any> {
     super(props);
     this.state = {
       orderStateList: [
-        { label: "待发货", iconURL: "wait-for-shipped", operate: 'wait-for-shipped' },
+        { label: "待发货", iconURL: "wait-for-evaluate", operate: 'wait-for-evaluate' },
         { label: "待取货", iconURL: "wait-for-receive", operate: 'wait-for-receive' },
         { label: "退款/售后", iconURL: "after-service", operate: 'after-service' },
         { label: "全部订单", iconURL: "all-order", operate: 'all-order' }
@@ -20,27 +20,27 @@ export default class Home extends Component<any, any> {
         {
           value: "自提管理",
           image:
-            "http://47.106.202.197:3000/image/icon/taking-goods-address.svg"
+            "http://82.157.235.2:3000/image/icon/taking-goods-address.svg"
         },
         {
           value: "联系客服",
-          image: "http://47.106.202.197:3000/image/icon/call-service.svg"
+          image: "http://82.157.235.2:3000/image/icon/call-service.svg"
         },
         {
           value: "设置",
-          image: "http://47.106.202.197:3000/image/icon/setting.svg"
+          image: "http://82.157.235.2:3000/image/icon/setting.svg"
         },
         {
           value: "钱包",
-          image: "http://47.106.202.197:3000/image/icon/wallet.svg"
+          image: "http://82.157.235.2:3000/image/icon/wallet.svg"
         },
         {
           value: "意见反馈",
-          image: "http://47.106.202.197:3000/image/icon/feedback.svg"
+          image: "http://82.157.235.2:3000/image/icon/feedback.svg"
         },
         {
           value: "更多",
-          image: "http://47.106.202.197:3000/image/icon/more.svg"
+          image: "http://82.157.235.2:3000/image/icon/more.svg"
         }
       ],
       userInfo: {}
@@ -69,7 +69,7 @@ export default class Home extends Component<any, any> {
         });
         const { code } = await taro.login();
         const { data } = await taro.request({
-          url: "http://47.106.202.197:3000/login",
+          url: "http://82.157.235.2:3000/login",
           data: { code, userInfo },
           method: "GET",
           header: {
@@ -100,7 +100,7 @@ export default class Home extends Component<any, any> {
 
   operationSwitch = (item) => {
     switch(item.operate){
-      case 'wait-for-shipped':
+      case 'wait-for-evaluate':
         taro.navigateTo({
           url:`/pages/order-list/index?currentTab=1`
         })
@@ -173,7 +173,7 @@ export default class Home extends Component<any, any> {
             return (
               <View className='state-common' key={item.iconURL} onClick={()=>{this.operationSwitch(item)}}>
                 <Image
-                  src={`http://47.106.202.197:3000/image/icon/${item.iconURL}.svg`}
+                  src={`http://82.157.235.2:3000/image/icon/${item.iconURL}.svg`}
                 ></Image>
                 <Text className='state-text'>{item.label}</Text>
               </View>

@@ -27,7 +27,7 @@ export default class GoodsDetail extends Component<any, any> {
     const id = this.$instance.router.params.goodsId
     const { data } = await taro.request({
       method:'GET',
-      url:'http://47.106.202.197:3000/goods/query',
+      url:'http://82.157.235.2:3000/goods/query',
       data:{ id },
       header:{
         'content-type': 'application/json'
@@ -48,7 +48,7 @@ export default class GoodsDetail extends Component<any, any> {
   getCartGoodsNum = async () => {
     const userInfo = getUserIdFromStorage()
     const { data } = await taro.request({
-      url:'http://47.106.202.197:3000/shoppingCart/query',
+      url:'http://82.157.235.2:3000/shoppingCart/query',
       data:{
         user_id: userInfo.user_id
       },
@@ -69,7 +69,7 @@ export default class GoodsDetail extends Component<any, any> {
   addShoppingCart = async () => {
     const userInfo = getUserIdFromStorage()
     await taro.request({
-      url: 'http://47.106.202.197:3000/shoppingCart/add',
+      url: 'http://82.157.235.2:3000/shoppingCart/add',
       method: 'GET',
       data: {
         goods_id: this.$instance.router.params.goodsId,
@@ -96,7 +96,7 @@ export default class GoodsDetail extends Component<any, any> {
   getCurrentLocation = async () => {
     const { user_id } = getUserIdFromStorage()
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
+      url: 'http://82.157.235.2:3000/location/getCurrentLocation',
       data:{
         user_id
       },

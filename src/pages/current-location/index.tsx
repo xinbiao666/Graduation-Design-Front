@@ -16,7 +16,7 @@ export default function CurrentLocation() {
   const getCurrentLocation = async () => {
     const { user_id } = getUserIdFromStorage()
     const { data } = await taro.request({
-      url: 'http://47.106.202.197:3000/location/getCurrentLocation',
+      url: 'http://82.157.235.2:3000/location/getCurrentLocation',
       data:{
         user_id
       },

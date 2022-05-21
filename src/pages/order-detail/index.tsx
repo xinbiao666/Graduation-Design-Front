@@ -31,7 +31,7 @@ export default class OrderDetail extends Component<any, any> {
 
   getOrderDetail = async () => {
     const { data } = await taro.request({
-      url: "http://47.106.202.197:3000/order/queryOrderDetail",
+      url: "http://82.157.235.2:3000/order/queryOrderDetail",
       data: {
         order_id: this.$instance.router.params.order_id
       },
@@ -140,7 +140,7 @@ export default class OrderDetail extends Component<any, any> {
         <View className='user-info-container'>
           <View className='user-name-phone'>
             <View className='icon'>
-              <Image src='http://47.106.202.197:3000/image/icon/my-info.svg'></Image>
+              <Image src='http://82.157.235.2:3000/image/icon/my-info.svg'></Image>
             </View>
             <View className='user'>江星标 13697749577</View>
           </View>
@@ -148,7 +148,7 @@ export default class OrderDetail extends Component<any, any> {
         </View>
         <View className='receive-location'>
           <View className='icon'>
-            <Image src='http://47.106.202.197:3000/image/icon/shop.png'></Image>
+            <Image src='http://82.157.235.2:3000/image/icon/shop.png'></Image>
           </View>
           <View className='location-info'>
             <View className='location-name'>自提点：江星标的家</View>
